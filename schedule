@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tampa Bachelorette Trip Schedule</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #ffeef8 0%, #e6f7ff 100%);
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #ffc0d3 0%, #87ceeb 100%);
+            padding: 30px;
+            text-align: center;
+            color: white;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.95;
+        }
+        
+        .schedule-grid {
+            padding: 30px;
+            overflow-x: auto;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+        
+        th {
+            background: linear-gradient(135deg, #ffb3c6 0%, #7ec8e3 100%);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-size: 1.1em;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        
+        th:first-child {
+            width: 150px;
+            background: #ff91b0;
+        }
+        
+        td {
+            padding: 15px;
+            border: 1px solid #f0f0f0;
+            vertical-align: top;
+        }
+        
+        td:first-child {
+            background: #fff5f8;
+            font-weight: 600;
+            color: #d64b7a;
+        }
+        
+        .time-section {
+            background: linear-gradient(to right, #ffe6f0 0%, #e6f7ff 100%);
+            font-weight: bold;
+            color: #d64b7a;
+            font-size: 1.05em;
+        }
+        
+        .weather {
+            background: #e6f7ff;
+            padding: 8px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            font-size: 0.95em;
+        }
+        
+        .activity {
+            margin-bottom: 8px;
+        }
+        
+        .link-placeholder {
+            display: inline-block;
+            background: linear-gradient(135deg, #ffc0d3 0%, #87ceeb 100%);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 0.9em;
+            margin-top: 5px;
+            transition: all 0.3s;
+        }
+        
+        .link-placeholder:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        .notes {
+            background: #fff9e6;
+            padding: 10px;
+            border-left: 4px solid #ffc107;
+            border-radius: 5px;
+            margin-top: 10px;
+            font-size: 0.9em;
+        }
+        
+        .empty-cell {
+            color: #ccc;
+            font-style: italic;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+            
+            th, td {
+                padding: 10px;
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🌴 Tampa Bachelorette Trip 🌴</h1>
+            <p>February 14-18, 2025</p>
+        </div>
+        
+        <div class="schedule-grid">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Time</th>
+                        <th>Saturday 2/14<br>Arrival Day</th>
+                        <th>Sunday 2/15</th>
+                        <th>Monday 2/16</th>
+                        <th>Tuesday 2/17</th>
+                        <th>Wednesday 2/18<br>Departure Day</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- MORNING SECTION -->
+                    <tr>
+                        <td colspan="6" class="time-section">☀️ MORNING</td>
+                    </tr>
+                    
+                    <!-- Weather Row -->
+                    <tr>
+                        <td>Weather</td>
+                        <td>
+                            <div class="weather">75°F / ☀️ Sunny / 5% rain</div>
+                        </td>
+                        <td>
+                            <div class="weather">Forecast: [Update closer to date]</div>
+                        </td>
+                        <td>
+                            <div class="weather">Forecast: [Update closer to date]</div>
+                        </td>
+                        <td>
+                            <div class="weather">Forecast: [Update closer to date]</div>
+                        </td>
+                        <td>
+                            <div class="weather">Forecast: [Update closer to date]</div>
+                        </td>
+                    </tr>
+                    
+                    <!-- Breakfast Row -->
+                    <tr>
+                        <td>🍳 Breakfast</td>
+                        <td class="empty-cell">—</td>
+                        <td>
+                            <div class="activity">Get ready for brunch</div>
+                        </td>
+                        <td>
+                            <div class="activity">☕ Coffee and light breakfast</div>
+                        </td>
+                        <td>
+                            <div class="activity">☕ Grab drinks? Maybe go to coffee shop and get something to eat</div>
+                            <a href="#" class="link-placeholder">📍 Coffee Shop</a>
+                        </td>
+                        <td>
+                            <div class="activity">Get ready for boat, eat something at the house</div>
+                        </td>
+                    </tr>
+                    
+                    <!-- Day Activity 1 Row -->
+                    <tr>
+                        <td>Morning Activity</td>
+                        <td class="empty-cell">—</td>
+                        <td>
+                            <div class="activity">🥂 Brunch</div>
+                            <div class="weather">Weather: [Update closer to date]</div>
+                            <a href="#" class="link-placeholder">📍 Brunch Location</a>
+                        </td>
+                        <td>
+                            <div class="activity">🏡 Hang at house, lay by pool or possible beach day! 🏖️</div>
+                            <div class="weather">Weather: [Update closer to date]</div>
+                        </td>
+                        <td>
+                            <div class="activity">🚤 Boat Day!</div>
+                            <div class="weather">Weather: [Update closer to date]</div>
+                            <a href="#" class="link-placeholder">📍 Boat Company</a>
+                        </td>
+                        <td>
+                            <div class="activity">✈️ Get ready to go to airport</div>
+                        </td>
+                    </tr>
+                    
+                    <!-- AFTERNOON SECTION -->
+                    <tr>
+                        <td colspan="6" class="time-section">🌞 AFTERNOON</td>
+                    </tr>
+                    
+                    <!-- Weather Row -->
+                    <tr>
+                        <td>Weather</td>
+                        <td>
+                            <div class="weather">75°F / ☀️ Sunny / 5% rain</div>
+                        </td>
+                        <td>
+                            <div class="weather">Forecast: [Update closer to date]</div>
+                        </td>
+                        <td>
+                            <div class="weather">Forecast: [Update closer to date]</div>
+                        </td>
+                        <td>
+                            <div class="weather">Forecast: [Update closer to date]</div>
+                        </td>
+                        <td>
+                            <div class="weather">Forecast: [Update closer to date]</div>
+                        </td>
+                    </tr>
+                    
+                    <!-- Lunch Row -->
+                    <tr>
+                        <td>🍽️ Lunch</td>
+                        <td class="empty-cell">—</td>
+                        <td>
+                            <div class="activity">Eating at brunch</div>
+                        </td>
+                        <td>
+                            <div class="activity">🏡 Eat at the house</div>
+                        </td>
+                        <td>
+                            <div class="activity">🏡 Eat at the house</div>
+                        </td>
+                        <td>
+                            <div class="activity">✈️ Get ready to go to airport</div>
+                        </td>
+                    </tr>
+                    
+                    <!-- Day Activity 2 Row -->
+                    <tr>
+                        <td>Afternoon Activity</td>
+                        <td>
+                            <div class="activity">🏡 For those that arrive early, settle at the house and maybe do some light food shopping for things to have at the house.</div>
+                            <div class="notes">💰 Everyone will chip in for total cost</div>
+                        </td>
+                        <td>
+                            <div class="activity">🏡 Hang at house, lay by pool</div>
+                        </td>
+                        <td>
+                            <div class="activity">🏡 Hang at house, lay by pool or possible beach day! 🏖️</div>
+                        </td>
+                        <td>
+                            <div class="activity">🏡 Hang at house and lay by pool</div>
+                        </td>
+                        <td>
+                            <div class="activity">✈️ Get ready to go to airport</div>
+                        </td>
+                    </tr>
+                    
+                    <!-- EVENING SECTION -->
+                    <tr>
+                        <td colspan="6" class="time-section">🌙 EVENING</td>
+                    </tr>
+                    
+                    <!-- Weather Row -->
+                    <tr>
+                        <td>Weather</td>
+                        <td>
+                            <div class="weather">Forecast: [Update closer to date]</div>
+                        </td>
+                        <td>
+                            <div class="weather">Forecast: [Update closer to date]</div>
+                        </td>
+                        <td>
+                            <div class="weather">Forecast: [Update closer to date]</div>
+                        </td>
+                        <td>
+                            <div class="weather">Forecast: [Update closer to date]</div>
+                        </td>
+                        <td>
+                            <div class="weather">Forecast: [Update closer to date]</div>
+                        </td>
+                    </tr>
+                    
+                    <!-- Dinner Row -->
+                    <tr>
+                        <td>🍴 Dinner</td>
+                        <td>
+                            <div class="activity">🏡 Cook or order food at the house</div>
+                        </td>
+                        <td>
+                            <div class="activity">🏡 Cook or order food at the house</div>
+                        </td>
+                        <td>
+                            <div class="activity">🍱 Out to dinner - Katie requested hibachi</div>
+                            <a href="#" class="link-placeholder">📍 Hibachi Restaurant</a>
+                        </td>
+                        <td>
+                            <div class="activity">🌮 Out to dinner - Katie requested Mexican</div>
+                            <a href="#" class="link-placeholder">📍 Mexican Restaurant</a>
+                        </td>
+                        <td class="empty-cell">—</td>
+                    </tr>
+                    
+                    <!-- Night Activity Row -->
+                    <tr>
+                        <td>🌃 Night Activity</td>
+                        <td>
+                            <div class="activity">🎮 Play some games, relax and hang out</div>
+                        </td>
+                        <td>
+                            <div class="activity">🍹 Night out at the bar</div>
+                            <a href="#" class="link-placeholder">📍 Bar Location</a>
+                        </td>
+                        <td>
+                            <div class="activity">🎤 Trivia night!</div>
+                            <a href="#" class="link-placeholder">📍 Trivia Location</a>
+                        </td>
+                        <td>
+                            <div class="activity">🍹 Stay out and find a bar or hang out spot</div>
+                        </td>
+                        <td class="empty-cell">—</td>
+                    </tr>
+                    
+                    <!-- Notes Row -->
+                    <tr>
+                        <td>📝 Notes</td>
+                        <td class="empty-cell">—</td>
+                        <td class="empty-cell">—</td>
+                        <td class="empty-cell">—</td>
+                        <td class="empty-cell">—</td>
+                        <td>
+                            <div class="notes">Eat something light or eat at airport if leaving early. Have to be out of the house by 10:00am</div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
